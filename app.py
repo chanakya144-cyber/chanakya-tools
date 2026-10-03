@@ -444,6 +444,10 @@ def confirm_tool(tool_id, action):
     
     return "Invalid Request"
 
-if __name__=='__main__':
+import os
+
+if __name__ == '__main__':
     init_db()
-    app.run(debug=True, port=5001, use_reloader=False)
+    # Render തരുമ്പോൾ ആ PORT എ也将, അല്ലെങ്കിൽ ലോക്കലായി 5001 ഉപയോഗിക്കും
+    port = int(os.environ.get("PORT", 5001))
+    app.run(host='0.0.0.0', port=port, debug=True, use_reloader=False)
