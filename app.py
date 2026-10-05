@@ -116,7 +116,7 @@ def sms_return(person, tool, code, site, date_str, staff_phone):
 # === WEEKLY REMINDER & SMS FUNCTIONS ===
 def sms_weekly_reminder(person, tool, code, site, staff_phone, tool_id):
     if staff_phone:
-        domain = "https://chanakyanirman.pythonanywhere.com"  # നിന്റെ site name
+        domain = "https://chanakya-tools.onrender.com"  # നിന്റെ site name
         link_yes = f"{domain}/confirm_tool/{tool_id}/yes"
         link_no = f"{domain}/confirm_tool/{tool_id}/no"
         msg_user = f"Dear {person}, Reminder: {tool} ({code}) at {site}? YES:{link_yes} NO:{link_no} -Team Chanakya Nirman"
@@ -443,7 +443,6 @@ def confirm_tool(tool_id, action):
         return "<h3>മറുപടി സ്വീകരിച്ചിരിക്കുന്നു. ഓഫീസ് അധികൃതരെ വിവരം അറിയിച്ചിട്ടുണ്ട്. ⚠️</h3>"
     
     return "Invalid Request"
-
 import os
 
 if __name__ == '__main__':
